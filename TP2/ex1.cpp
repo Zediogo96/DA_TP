@@ -60,28 +60,19 @@ bool Labyrinth::findGoal_Non_Recursive(int x, int y) {
     return false;
 }
 
-bool Labyrinth::findGoal(int x, int y, bool &flag) {
+bool Labyrinth::findGoal(int x, int y) {
 
-    using namespace std;
+    visited[x][y] = true;
 
-    if (labyrinth[x][y] == 2) flag = true;
+    if (labyrinth[x][y] == 2) return true;
 
-    /** Mark cell as visited **/
-    if (labyrinth[x][y] != 0 && labyrinth[x][y] != 2) visited[x][y] = true;
+    if (!visited[x - 1][y] && labyrinth[x - 1][y] != 0) findGoal(x - 1, y);
+    if (!visited[x + 1][y] && labyrinth[x + 1][y] != 0) findGoal(x + 1, y);
+    if (!visited[x][y - 1] && labyrinth[x][y - 1] != 0) findGoal(x, y - 1);
+    if (!visited[x][y + 1] && labyrinth[x][y + 1] != 0) findGoal(x, y + 1);
 
-    print();
-    cout << "----------------------------" << endl;
+    return false;
 
-    // UP
-    if (labyrinth[x][y - 1] != 0 && !visited[x][y - 1]) findGoal(x, y - 1, flag);
-    // DOWN
-    if (labyrinth[x][y + 1] != 0 && !visited[x][y+1]) findGoal(x, y + 1, flag);
-    // LEFT
-    if (labyrinth[x - 1][y] != 0 && !visited[x-1][y]) findGoal(x - 1, y, flag);
-    // RIGHT
-    if (labyrinth[x + 1][y] != 0 && !visited[x+1][y]) findGoal(x + 1, y, flag);
-
-    return flag;
 }
 
 void Labyrinth::initializeVisited() {
@@ -109,7 +100,7 @@ TEST(TP2_Ex1, testLabyrinthPossible) {
 
     Labyrinth l1(lab1);
     bool flag;
-    EXPECT_EQ(l1.findGoal(1,1, flag),true);
+    EXPECT_EQ(l1.findGoal(1,1),true);
 }
 
 TEST(TP2_Ex1, testLabyrinthImpossible) {
@@ -127,5 +118,5 @@ TEST(TP2_Ex1, testLabyrinthImpossible) {
 
     Labyrinth l1(lab1);
     bool flag = false;
-    EXPECT_EQ(l1.findGoal(1,1,flag),false);
+    EXPECT_EQ(l1.findGoal(1,1),false);
 }

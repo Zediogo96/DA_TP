@@ -1,10 +1,37 @@
 // By: Gonçalo Leão
 
 #include "exercises.h"
+#include <iostream>
 
 bool changeMakingGreedy(unsigned int C[], unsigned int Stock[], unsigned int n, unsigned int T, unsigned int usedCoins[]) {
     //TODO...
+    unsigned int curr = 0;
+    unsigned int total_possible = 0;
 
+    for (int i = 0; i < n; i++) {
+        usedCoins[i] = 0;
+        total_possible += (C[i] * Stock[i]);
+        std::cout << total_possible << std::endl;
+    }
+
+    if (total_possible < T) return false;
+
+    for (unsigned int i = n - 1; i >= 0; i--) {
+        while (Stock[i] > 0) {
+
+            if (curr + C[i] > T) break;
+
+            curr += C[i];
+            Stock[i]--;
+            usedCoins[i]++;
+            /*std::cout << "i => " << i << std::endl;
+            std::cout << "--------------------" << std::endl;
+            std::cout << "Curr => " << curr << std::endl;*/
+
+            if (curr == T) return true;
+        }
+    }
+    return curr == T;
     return false;
 }
 

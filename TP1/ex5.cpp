@@ -14,8 +14,9 @@ unsigned int sumArray(unsigned int a[], unsigned int n) {
 
 bool isCanonical(unsigned int C[], unsigned int n) {
     //TODO...
+    if (sumArray(C, n) < n) return false;
 
-    return false;
+    return true;
 }
 
 

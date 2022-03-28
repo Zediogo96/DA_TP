@@ -267,6 +267,34 @@ build CMakeFiles/TP2.dir/main.cpp.o: CXX_COMPILER__TP2_Debug /home/zediogo96/Doc
   OBJECT_DIR = CMakeFiles/TP2.dir
   OBJECT_FILE_DIR = CMakeFiles/TP2.dir
 
+build CMakeFiles/TP2.dir/TP2/ex1.cpp.o: CXX_COMPILER__TP2_Debug /home/zediogo96/Documents/FEUP/DA/TPs/TP2/ex1.cpp || cmake_object_order_depends_target_TP2
+  DEP_FILE = CMakeFiles/TP2.dir/TP2/ex1.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock
+  OBJECT_DIR = CMakeFiles/TP2.dir
+  OBJECT_FILE_DIR = CMakeFiles/TP2.dir/TP2
+
+build CMakeFiles/TP2.dir/TP2/ex2.cpp.o: CXX_COMPILER__TP2_Debug /home/zediogo96/Documents/FEUP/DA/TPs/TP2/ex2.cpp || cmake_object_order_depends_target_TP2
+  DEP_FILE = CMakeFiles/TP2.dir/TP2/ex2.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock
+  OBJECT_DIR = CMakeFiles/TP2.dir
+  OBJECT_FILE_DIR = CMakeFiles/TP2.dir/TP2
+
+build CMakeFiles/TP2.dir/TP2/ex3.cpp.o: CXX_COMPILER__TP2_Debug /home/zediogo96/Documents/FEUP/DA/TPs/TP2/ex3.cpp || cmake_object_order_depends_target_TP2
+  DEP_FILE = CMakeFiles/TP2.dir/TP2/ex3.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock
+  OBJECT_DIR = CMakeFiles/TP2.dir
+  OBJECT_FILE_DIR = CMakeFiles/TP2.dir/TP2
+
+build CMakeFiles/TP2.dir/TP2/ex4.cpp.o: CXX_COMPILER__TP2_Debug /home/zediogo96/Documents/FEUP/DA/TPs/TP2/ex4.cpp || cmake_object_order_depends_target_TP2
+  DEP_FILE = CMakeFiles/TP2.dir/TP2/ex4.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googletest -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock/include -isystem /home/zediogo96/Documents/FEUP/DA/TPs/lib/googletest-master/googlemock
+  OBJECT_DIR = CMakeFiles/TP2.dir
+  OBJECT_FILE_DIR = CMakeFiles/TP2.dir/TP2
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TP2
@@ -275,7 +303,7 @@ build CMakeFiles/TP2.dir/main.cpp.o: CXX_COMPILER__TP2_Debug /home/zediogo96/Doc
 #############################################
 # Link the executable TP2
 
-build TP2: CXX_EXECUTABLE_LINKER__TP2_Debug CMakeFiles/TP2.dir/main.cpp.o | lib/libgtest_maind.a lib/libgmock_maind.a lib/libgmockd.a lib/libgtestd.a || lib/libgmock_maind.a lib/libgmockd.a lib/libgtest_maind.a lib/libgtestd.a
+build TP2: CXX_EXECUTABLE_LINKER__TP2_Debug CMakeFiles/TP2.dir/main.cpp.o CMakeFiles/TP2.dir/TP2/ex1.cpp.o CMakeFiles/TP2.dir/TP2/ex2.cpp.o CMakeFiles/TP2.dir/TP2/ex3.cpp.o CMakeFiles/TP2.dir/TP2/ex4.cpp.o | lib/libgtest_maind.a lib/libgmock_maind.a lib/libgmockd.a lib/libgtestd.a || lib/libgmock_maind.a lib/libgmockd.a lib/libgtest_maind.a lib/libgtestd.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest_maind.a  lib/libgmock_maind.a  lib/libgmockd.a  lib/libgtestd.a  -lpthread
   OBJECT_DIR = CMakeFiles/TP2.dir
