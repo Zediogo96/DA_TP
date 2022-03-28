@@ -7,7 +7,7 @@
 bool sum3(unsigned int T, unsigned int nums[3]);
 
 // Ex 2
-int maxSubsequence(int A[], unsigned int n, unsigned int &i, unsigned int &j);
+int maxSubsequence(const int A[], unsigned int n, unsigned int &i, unsigned int &j);
 
 // Ex 3
 bool changeMakingBF(unsigned int C[], unsigned int Stock[], unsigned int n, unsigned int T, unsigned int usedCoins[]);

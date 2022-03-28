@@ -1,21 +1,26 @@
 // By: Gonçalo Leão
 
 #include "exercises.h"
+#include <iostream>
 
-int maxSubsequence(int A[], unsigned int n, unsigned int &i, unsigned int &j) {
+int maxSubsequence(const int A[], unsigned int n, unsigned int &i, unsigned int &j) {
     //TODO...
     int curr_sum = 0;
-    int max_sum = 0;
+    int max_sum = INT16_MIN;
 
     for (int x = 0; x < n; x++) {
-        for (int y = i; y < n; y++) {
-            
+        curr_sum = 0;
+        for (int y = x; y < n; y++) {
+            curr_sum += A[y];
+            if (curr_sum > max_sum) {
+                std::cout << "i: " << i << " j: " << j << " max: " << max_sum << std::endl;
+                i = x;
+                j = y;
+                max_sum = curr_sum;
+            }
         }
     }
-
-    int maxSum;
-
-    return maxSum;
+    return max_sum;
 }
 
 
