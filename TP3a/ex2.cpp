@@ -1,49 +1,47 @@
 #include "exercises.h"
 #include <iostream>
+#include <climits>
 
-bool changeMakingUnlimitedDP_(const unsigned int C[], unsigned int n, unsigned int T, unsigned int usedCoins[]) {
-    // TODO
+bool changeMakingUnlimitedDP(unsigned int C[], unsigned int n, unsigned int T, unsigned int usedCoins[]) {
 
+    /** SETUP NOTE: use T for array size and not N **/
+
+    auto minCoins = new unsigned int[T + 1]{0};
+    minCoins[0] = 0;
+    auto lastCoin = new unsigned int[T + 1]{UINT_MAX};
+
+    for (int i = 1; i < n; i++) minCoins[i] = UINT_MAX;
+
+    for (int i = 0; i < n; i++) usedCoins[i] = 0;
+
+
+    /** To iterate through coins array **/
     for (int i = 0; i < n; i++) {
-        usedCoins[i] = 0;
-    }
-
-    unsigned curr = 0;
-
-    int i = n - 1;
-
-    while (i != -1) {
-
-        if (C[i] +  curr > T) {
-            i--;
-        }
-        else if (C[i] + curr == T) {
-            usedCoins[i]++;
-            return true;
-        }
-        else {
-            usedCoins[i]++;
-            curr += C[i];
+        /** to iterate through minCoin and lastCoin **/
+        for (int j = 1; j <= T; j++) {
+            if (j >= C[i]) {
+                if (minCoins[j - C[i]] == 0) {
+                    minCoins[j] = 1;
+                    lastCoin[j] = i;
+                }
+                else if ( 1 + minCoins[j - C[i]] < minCoins[j]) {
+                    minCoins[j] = 1 + minCoins[j - C[i]];
+                    lastCoin[j] = i;
+                }
+            }
         }
     }
 
-    return false;
+
+    while (T > 0) {
+        if (lastCoin[T] == UINT_MAX) return false;
+        usedCoins[lastCoin[T]]++;
+        T -= C[lastCoin[T]];
+    }
+
+
+    return true;
 }
-
-bool changeMakingUnlimitedDP(const unsigned int C[], unsigned int n, unsigned int T, unsigned int usedCoins[]) {
-    int f[n + 1], g[n + 1];
-
-    f[n+1] = {0};
-    g[n+1] = {0};
-
-    // Em comparação com o ex da teórica, só temos de nos preocupar com a variáveç S
-
-    for (int i = 1; i <= n; i++)
-        /*for (int k = C[])*/
-}
-
-
-
 
 /// TESTS ///
 #include <gtest/gtest.h>

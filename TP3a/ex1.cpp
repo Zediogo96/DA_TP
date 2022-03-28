@@ -8,13 +8,14 @@ unsigned long factorialRecurs(unsigned long n) {
 
 unsigned long factorialDP(unsigned long n) {
     //TODO
-    unsigned long fact = 1;
-    if (n == 0) return 1;
-    for (unsigned long i = 1; i <= n; i++) {
-        fact *= i;
+    auto arr = new unsigned long[n + 1];
+
+    for (int i = 0; i <= n; i++) {
+        if (i == 0 || i == 1) arr[i] = 1;
+        else arr[i] = i * arr[i-1];
     }
 
-    return fact;
+    return arr[n];
 }
 
 /// TESTS ///
